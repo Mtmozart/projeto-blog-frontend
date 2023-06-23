@@ -20,9 +20,9 @@ export const parameters = {
 };
 
 export const decorators = [
-  (Story) => (
+  (StoryFn) => (
     <ThemeProvider theme={theme}>
-      <Story />
+      <StoryFn />
       <GlobalStyles />
     </ThemeProvider>
   ),
