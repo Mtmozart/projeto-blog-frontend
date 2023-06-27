@@ -6,7 +6,7 @@ import { formatDate } from '../../utils/format-date';
 export type ArticleMetaProps = {
   createdAt: string;
   author: Author;
-  categories: Category[];
+  categories: Category;
 };
 
 export const ArticleMeta = ({
@@ -18,20 +18,16 @@ export const ArticleMeta = ({
     <Styled.Wrapper>
       <p>
         <span>Por: </span>
-        <a href={`/author/${author.slug}`}>{author.displayName}</a>
+        <a href={`/author/${author.data.attributes.slug}`}>
+          {author.data.attributes.displayName}
+        </a>
         <span className="separator"> | </span>
         <time dateTime={createdAt}>{formatDate(createdAt)}</time>
         <span className="separator"> | </span>
         <span className="categories">
-          {categories.map((category) => {
-            return (
-              <span key={`article-meta-cat${category.id}`}>
-                <a href={`/category/${category.slug}`}>
-                  {category.displayName}
-                </a>
-              </span>
-            );
-          })}
+          <a href={`/category/${categories.data.attributes.slug}`}>
+            {categories.data.attributes.displayName}
+          </a>
         </span>
       </p>
     </Styled.Wrapper>

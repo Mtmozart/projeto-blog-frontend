@@ -13,9 +13,9 @@ describe('<ArticleMeta />', () => {
     expect(
       screen.getByRole('link', { name: 'Matheus Mozart' }),
     ).toHaveAttribute('href', '/author/matheus-mozart');
-    expect(screen.getByRole('link', { name: 'Tech' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'React6' })).toHaveAttribute(
       'href',
-      '/category/tech',
+      '/category/React6',
     );
     expect(screen.getByRole('link', { name: 'JS' })).toHaveAttribute(
       'href',
