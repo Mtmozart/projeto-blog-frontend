@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleHeader /> should render heading, excerpt, cover img and meta 1`] = `
+.c5 {
+  font-size: 1.6rem;
+  color: #AAAAAA;
+  font-style: italic;
+}
+
+.c5 .categories span::after {
+  content: ', ';
+}
+
+.c5 .categories span:last-child::after {
+  content: '';
+}
+
+.c5 a {
+  color: #dc143c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.c5:hover {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+.c2 {
+  color: #000000;
+  font-size: 4.0rem;
+  text-transform: none;
+}
+
+.c0 {
+  padding-bottom: 4.0rem;
+  margin-bottom: 4.0rem;
+  border-bottom: 0.1rem solid #DDDDDD;
+}
+
+.c0 .c1 {
+  margin: 0;
+  margin-bottom: 2.4rem;
+}
+
+.c3 {
+  margin: 2.4rem 0;
+  font-size: 2.4rem;
+}
+
+.c4 {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+<div>
+  <header
+    class="c0"
+  >
+    <h1
+      class="c1 c2"
+    >
+      A importância do react 6 no frontend
+    </h1>
+    <p
+      class="c3"
+    >
+      Bem-vindo ao nosso site sobre React! Aqui você encontrará um resumo conciso e abrangente sobre essa popular biblioteca JavaScript para construção de interfaces de usuário.
+    </p>
+    <img
+      alt="A importância do react 6 no frontend"
+      class="c4"
+      src="https://img.freepik.com/vetores-gratis/cidade-moderna-no-rio-a-noite_1441-2829.jpg?w=1060&t=st=1687883386~exp=1687883986~hmac=8f2d3eb84e58e071e05d2506ae05451b54aa8f23e648beaf0f684ecc8d1f795f"
+    />
+    <div
+      class="c5"
+    >
+      <p>
+        <span>
+          Por: 
+        </span>
+        <a
+          href="/author/matheus-mozart"
+        >
+          Matheus Mozart
+        </a>
+        <span
+          class="separator"
+        >
+           | 
+        </span>
+        <time
+          datetime="2023-06-02T15:16:09.246+00:00"
+        >
+          2 de jun. de 2023
+        </time>
+        <span
+          class="separator"
+        >
+           | 
+        </span>
+        <span
+          class="categories"
+        >
+          <a
+            href="/category/react6"
+          >
+            React6
+          </a>
+        </span>
+      </p>
+    </div>
+  </header>
+</div>
+`;

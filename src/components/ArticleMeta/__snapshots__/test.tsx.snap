@@ -59,20 +59,11 @@ exports[`<ArticleMeta /> should match snapshot 1`] = `
       <span
         class="categories"
       >
-        <span>
-          <a
-            href="/category/tech"
-          >
-            Tech
-          </a>
-        </span>
-        <span>
-          <a
-            href="/category/javascript"
-          >
-            JS
-          </a>
-        </span>
+        <a
+          href="/category/react6"
+        >
+          React6
+        </a>
       </span>
     </p>
   </div>

@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
 import { ArticleHeader, ArticleHeaderProps } from '.';
-
 import mock from './mock';
+
 import { formatDate } from '../../utils/format-date';
 
-const props: ArticleHeaderProps = mock;
+const props = mock;
 
 describe('<ArticleHeader />', () => {
   it('should render heading, excerpt, cover img and meta', () => {

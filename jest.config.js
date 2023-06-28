@@ -22,4 +22,5 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/.next/', '/.out/', '/public/'],
 
   setupFilesAfterEnv: ['<rootDir>/.jest/setup-tests.js'],
+  // preset: 'react-native',
 };

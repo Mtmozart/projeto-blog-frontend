@@ -15,11 +15,7 @@ describe('<ArticleMeta />', () => {
     ).toHaveAttribute('href', '/author/matheus-mozart');
     expect(screen.getByRole('link', { name: 'React6' })).toHaveAttribute(
       'href',
-      '/category/React6',
-    );
-    expect(screen.getByRole('link', { name: 'JS' })).toHaveAttribute(
-      'href',
-      '/category/javascript',
+      '/category/react6',
     );
   });
 

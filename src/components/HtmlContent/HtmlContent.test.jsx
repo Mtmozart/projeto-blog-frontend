@@ -11,8 +11,9 @@ describe('<HtmlContent />', () => {
   it('should match snapshot', () => {
     const { container } = renderTheme(<HtmlContent html={'<b>Children</b>'} />);
     expect(container.firstChild).toMatchInlineSnapshot(`
-      .c0 {
-        font-size:1.5rem;
+      .c1 {
+        font-size: calc(1.6rem + 0.2rem);
+        line-height: 1.5;
       }
 
       <div
