@@ -46,7 +46,7 @@ export default {
     },
     {
       id: '8',
-      link: 'https://hotmart.com/',
+      link: 'http://localhost/home/4',
       text: 'Cursos',
       newTab: true,
     },

@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
 import { Menu, MenuProps } from '.';
 
@@ -6,10 +6,44 @@ import mock from './mock';
 
 const props = mock;
 
-describe('<ArticleMeta/>', () => {
-  it('should render', () => {
-    renderTheme(<Menu {...props} />);
+describe('<Menu/>', () => {
+  it('should render button link', () => {
+    renderTheme(<Menu {...props} links={undefined} />);
+    const buttonLink = screen.getByRole('link', { name: 'Open or close menu' });
+    const openMenuIcon = screen.getByLabelText('Open menu');
 
-    expect(screen.getByRole('heading', { name: 'Oi' })).toBeInTheDocument();
+    expect(buttonLink).toBeInTheDocument();
+    expect(openMenuIcon).toBeInTheDocument();
+
+    expect(screen.queryByLabelText('Close menu')).not.toBeInTheDocument;
+    expect(screen.queryByLabelText('Close menu')).not.toBeInTheDocument();
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+  });
+
+  it('should open/close menu on button click', () => {
+    renderTheme(<Menu {...props} />);
+    const buttonLink = screen.getByRole('link', { name: 'Open or close menu' });
+    fireEvent.click(buttonLink);
+
+    expect(screen.queryByLabelText('Close menu')).toBeInTheDocument;
+    expect(screen.queryByLabelText('Open menu')).not.toBeInTheDocument();
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Matheus Mozart' }));
+    expect(screen.getByRole('img', { name: 'Matheus Mozart' }));
+    expect(
+      screen
+        .getByRole('navigation')
+        .querySelectorAll('a:not([href="/"]):not(.sc-aXZVg.eWytFk)'),
+    ).toHaveLength(mock.links.length);
+
+    fireEvent.click(buttonLink);
+
+    expect(screen.queryByLabelText('Close menu')).not.toBeInTheDocument();
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Open menu')).toBeInTheDocument();
+  });
+  it('should match snapshot', () => {
+    const { container } = renderTheme(<Menu {...props} />);
+    expect(container).toMatchSnapshot();
   });
 });
