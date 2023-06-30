@@ -12,6 +12,7 @@ const {
   categories,
 } = data.posts.data[0].attributes;
 const post = {
+  id,
   title,
   slug,
   content,
