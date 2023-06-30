@@ -18,3 +18,10 @@ export const Template: StoryFn<PostTagProps> = (args) => {
     </div>
   );
 };
+export const NoTags: StoryFn<PostTagProps> = (args) => {
+  return (
+    <div style={{ padding: '0 2.4rem' }}>
+      <PostTags {...args} tags={undefined} />
+    </div>
+  );
+};
