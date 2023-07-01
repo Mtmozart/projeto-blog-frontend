@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     /* Insira seu código CSS aqui */
   `}
 `;
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xhuge};
   `}

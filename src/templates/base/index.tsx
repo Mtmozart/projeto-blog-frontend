@@ -16,8 +16,9 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
       <Menu
         links={settings.data.attributes.menuLink}
         blogName={settings.data.attributes.BlogName}
-        logo={settings.data.attributes.logo}
+        logo={settings.data.attributes.logo.data.attributes.url}
       />
+
       <Styled.HeaderContainer>
         <Header
           blogName={settings.data.attributes.BlogName}
@@ -26,7 +27,9 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
           showText={true}
         />
       </Styled.HeaderContainer>
+
       <Styled.ContentContainer>{children}</Styled.ContentContainer>
+
       <Styled.FooterContainer>
         <Footer footerHtml={settings.data.attributes.text} />
       </Styled.FooterContainer>

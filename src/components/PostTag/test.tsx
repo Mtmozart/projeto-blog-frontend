@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
 import { PostTags, PostTagProps } from '.';
 import mock from './mock';
-const props = mock;
+const props: PostTagProps = mock;
 
 describe('<PostTags />', () => {
   it('should render two tags', () => {
