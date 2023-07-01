@@ -1,11 +1,12 @@
 import * as Styled from './styles';
 import { Heading } from '../Heading';
 import { LogoLink } from '../LogoLink';
+import { StrapiImage } from '../../shared-typed/strapi-image';
 
 export type HeaderProps = {
   blogName: string;
   blogDescription: string;
-  logo: string;
+  logo: StrapiImage;
   showText: boolean;
 };
 
@@ -19,7 +20,7 @@ export const Header = ({
     <Styled.Wrapper>
       <LogoLink
         link="/"
-        srcImg={logo}
+        srcImg={logo.data.attributes.url}
         text={`${blogName} - ${blogDescription}`}
       />
 

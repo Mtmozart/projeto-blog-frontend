@@ -52,5 +52,14 @@ export default {
     },
   ],
   blogName: 'Matheus Mozart',
-  logo: 'https://lumiere-a.akamaihd.net/v1/images/alderaan-main_f5b676cf.jpeg?region=0%2C0%2C1280%2C720',
+  logo: {
+    data: {
+      identificador: '3',
+      attributes: {
+        name: '3334910-desktop-source-code-and-wallpaper-by-coding-and-programming-gratis-foto.jpg',
+        altText: null,
+        url: '/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg',
+      },
+    },
+  },
 } as MenuProps;
