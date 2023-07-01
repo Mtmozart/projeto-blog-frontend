@@ -6,7 +6,6 @@ export type PostGridProps = {
   posts?: PostCardProps[];
 };
 export function PostGrid({ posts = [] }: PostGridProps) {
-  console.log(posts);
   return (
     <Styled.Wrapper>
       {posts.length === 0 && (

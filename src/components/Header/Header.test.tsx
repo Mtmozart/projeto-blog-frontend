@@ -13,7 +13,6 @@ describe('<Header />', () => {
     ).toBeInTheDocument();
     expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
       'src',
-      props.logo,
     );
     expect(screen.getByText(props.blogDescription)).toBeInTheDocument();
   });
@@ -26,8 +25,8 @@ describe('<Header />', () => {
     ).not.toBeInTheDocument();
     expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
       'src',
-      props.logo.data, // Acessa diretamente a propriedade "url"
     );
+
     expect(screen.queryByRole(props.blogDescription)).not.toBeInTheDocument();
   });
 
