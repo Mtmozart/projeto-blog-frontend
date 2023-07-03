@@ -1,19 +1,19 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { PostsTemplates, PostsTemplatesProps } from '.';
+import { PostsTemplate, PostsTemplateProps } from '.';
 import mock from './mock';
 export default {
   title: 'PostsTemplates',
-  component: PostsTemplates,
+  component: PostsTemplate,
   args: mock,
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta<typeof PostsTemplates>;
+} as Meta<typeof PostsTemplate>;
 
-export const Template: StoryFn<PostsTemplatesProps> = (args) => {
+export const Template: StoryFn<PostsTemplateProps> = (args) => {
   return (
     <div>
-      <PostsTemplates {...args} />
+      <PostsTemplate {...args} />
     </div>
   );
 };

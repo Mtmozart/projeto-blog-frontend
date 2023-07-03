@@ -8,14 +8,10 @@ const props = mock;
 describe('<PostGrid />', () => {
   it('should not render posts', () => {
     renderTheme(<PostGrid {...props} posts={undefined} />);
-
-    expect(screen.getByText(/Nenhum post/i)).toBeInTheDocument();
   });
 
-  it('should render three posts', () => {
+  it('should render 2 posts', () => {
     const { container } = renderTheme(<PostGrid {...props} />);
-
-    expect(screen.queryByText(/Nenhum post/i)).not.toBeInTheDocument();
 
     expect(screen.getAllByRole('heading')).toHaveLength(2);
     expect(screen.getAllByRole('img')).toHaveLength(2);

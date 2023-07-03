@@ -1,7 +1,10 @@
-import { PostsTemplatesProps } from '.';
+import { PostsTemplateProps } from '.';
 import { data } from '../../api/data.json';
-const posts = data.posts;
-export default {
-  settings: data.setting,
-  posts,
-} as PostsTemplatesProps;
+const { setting, posts } = data;
+
+const postsTemplate: PostsTemplateProps = {
+  settings: setting,
+  posts: posts,
+};
+
+export default postsTemplate;
