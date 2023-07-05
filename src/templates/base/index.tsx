@@ -1,4 +1,4 @@
-import { SettingsStrapi } from '../../shared-typed/settings-strapi';
+import { SettingsStrapi } from '../../shared-types/settings-strapi';
 import { Menu } from '../../components/Menu';
 import * as Styled from './styles';
 import { Header } from '../../components/Header';

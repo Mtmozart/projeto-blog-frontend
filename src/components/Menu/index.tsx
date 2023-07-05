@@ -4,7 +4,7 @@ import { MenuLink } from '../MenuLink';
 import * as Styled from './styles';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
-import { StrapiImage } from '../../shared-typed/strapi-image';
+import { StrapiImage } from '../../shared-types/strapi-image';
 
 export type MenuPropsLinks = {
   id: string;

@@ -1,9 +1,8 @@
 import { PostCardProps, PostCard } from '../PostCard';
 import * as Styled from './styles';
-import postsApi from './mock';
 
 /*Observação -- Provavelmente tambem terrei que corrigir quando for chamar a api*/
-const postsApiStrapi = postsApi;
+
 export type PostGridProps = {
   posts?: PostCardProps[];
 };
@@ -11,18 +10,18 @@ export type PostGridProps = {
 export function PostGrid({ posts = [] }: PostGridProps) {
   return (
     <Styled.Wrapper>
-      {postsApiStrapi.length === 0 && (
-        <Styled.NotFound>Nenhum post</Styled.NotFound>
+      {posts.length === 0 && (
+        <Styled.NotFound>Nenhum encontrado</Styled.NotFound>
       )}
       <Styled.Grid>
-        {postsApiStrapi.length > 0 &&
-          postsApiStrapi.map((post) => (
+        {posts.length > 0 &&
+          posts.map((post) => (
             <PostCard
               key={`post-card-${post.id}`}
-              title={post.attributes.title}
-              cover={post.attributes.cover}
-              excerpt={post.attributes.excerpt}
-              slug={post.attributes.slug}
+              title={post.title}
+              cover={post.cover}
+              excerpt={post.excerpt}
+              slug={post.slug}
               id={post.id}
             />
           ))}

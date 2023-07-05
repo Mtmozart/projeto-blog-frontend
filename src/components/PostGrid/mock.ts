@@ -1,6 +1,5 @@
 import { PostGridProps } from '.';
 import { data } from '../../api/data.json';
+import postsApi from '../../utils/format-dataApi';
 
-const posts = data.posts.data;
-
-export default posts;
+export default { posts: postsApi };

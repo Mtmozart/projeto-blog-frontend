@@ -1,8 +1,9 @@
 import { PostProps } from '.';
 import { data } from '../../api/data.json';
+import postsApi from '../../utils/format-dataApi';
 
-const { id } = data.posts.data[0];
 const {
+  id,
   title,
   slug,
   content,
@@ -11,7 +12,7 @@ const {
   allowComments,
   author,
   categories,
-} = data.posts.data[0].attributes;
+} = postsApi[0];
 
 export default {
   id,

@@ -1,7 +1,7 @@
 import * as Styled from './styles';
 import { Heading } from '../Heading';
 import { LogoLink } from '../LogoLink';
-import { StrapiImage } from '../../shared-typed/strapi-image';
+import { StrapiImage } from '../../shared-types/strapi-image';
 
 export type HeaderProps = {
   blogName: string;
@@ -21,7 +21,7 @@ export const Header = ({
       <LogoLink
         link="/"
         srcImg={logo.data.attributes.url}
-        text={`${blogName} - ${blogDescription}`}
+        text={`${blogName}`}
       />
 
       {showText && (

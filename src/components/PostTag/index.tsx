@@ -1,5 +1,5 @@
 import * as Styled from './styles';
-import { PostTag } from '../../shared-typed/tag';
+import { PostTag } from '../../shared-types/tag';
 import Link from 'next/link';
 
 export type PostTagProps = {

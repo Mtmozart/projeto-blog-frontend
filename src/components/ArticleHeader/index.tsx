@@ -1,6 +1,6 @@
-import { Author } from '../../shared-typed/author';
-import { Category } from '../../shared-typed/category';
-import { StrapiImage } from '../../shared-typed/strapi-image';
+import { Author } from '../../shared-types/author';
+import { Category } from '../../shared-types/category';
+import { StrapiImage } from '../../shared-types/strapi-image';
 import { ArticleMeta } from '../ArticleMeta';
 import { Heading } from '../Heading';
 import * as Styled from './styles';
