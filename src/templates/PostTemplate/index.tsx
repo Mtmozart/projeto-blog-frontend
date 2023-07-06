@@ -11,12 +11,13 @@ export type PostTemplateProps = {
 };
 
 export const PostTemplate = ({ settings, post }: PostTemplateProps) => {
-  console.log(post.tags);
   return (
     <BaseTemplate settings={settings}>
       <Post {...post} />
 
-      <Styled.TagsContainer></Styled.TagsContainer>
+      <Styled.TagsContainer>
+        <PostTags tags={post.tags} />
+      </Styled.TagsContainer>
     </BaseTemplate>
   );
 };

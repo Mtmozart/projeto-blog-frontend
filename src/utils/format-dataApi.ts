@@ -15,9 +15,9 @@ for (let i = 0; i < postsQtd; i++) {
     cover,
     allowComments,
     author,
-    tags,
     categories,
   } = postsJson[i].attributes;
+  const tags = postsJson[i].attributes.tags.data;
 
   const post = {
     id,

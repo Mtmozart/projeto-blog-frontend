@@ -115,6 +115,33 @@ exports[`<PostGrid /> should match snapshot 1`] = `
           Bem-vindo ao nosso site sobre React! Aqui você encontrará um resumo conciso e abrangente sobre essa popular biblioteca JavaScript para construção de interfaces de usuário.
         </p>
       </div>
+      <div
+        class="c2"
+      >
+        <a
+          href="/post/a-importancia-do-react-6-no-frontend"
+        >
+          <img
+            alt="A importância do react 6 no frontend"
+            class="c3"
+            src="https://img.freepik.com/vetores-gratis/cidade-moderna-no-rio-a-noite_1441-2829.jpg?w=1060&t=st=1687883386~exp=1687883986~hmac=8f2d3eb84e58e071e05d2506ae05451b54aa8f23e648beaf0f684ecc8d1f795f"
+          />
+        </a>
+        <h2
+          class="c4 c5"
+        >
+          <a
+            href="/post/a-importancia-do-react-6-no-frontend"
+          >
+            A importância do react 6 no frontend
+          </a>
+        </h2>
+        <p
+          class=""
+        >
+          Bem-vindo ao nosso site sobre React! Aqui você encontrará um resumo conciso e abrangente sobre essa popular biblioteca JavaScript para construção de interfaces de usuário.
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,15 +1,14 @@
-import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
-import { PostTemplate, PostTemplatePropst } from '.';
+import { PostTemplate, PostTemplateProps } from '.';
 
-const props: PostTemplatePropst = {
-  title: 'any',
-};
+import mock from './mock';
 
-describe('<PostTemplate/>', () => {
-  it('should render', () => {
-    renderTheme(<PostTemplate {...props} />);
+const props: PostTemplateProps = mock;
 
-    expect(screen.getByRole('heading', { name: 'Oi' })).toBeInTheDocument();
+describe('<PostTemplate />', () => {
+  it('should match snapshot', () => {
+    const { container } = renderTheme(<PostTemplate {...props} />);
+
+    expect(container).toMatchSnapshot();
   });
 });
