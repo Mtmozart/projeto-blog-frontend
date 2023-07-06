@@ -1,4 +1,4 @@
-export default {
+/*export default {
   tags: [
     {
       data: {
@@ -19,4 +19,11 @@ export default {
       },
     },
   ],
-};
+};*/
+
+import postsApi from '../../utils/format-dataApi';
+import { PostTagProps } from './index';
+
+export default {
+  tags: postsApi[0].tags,
+} as PostTagProps;

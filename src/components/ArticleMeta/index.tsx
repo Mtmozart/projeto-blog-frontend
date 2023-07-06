@@ -2,6 +2,7 @@ import * as Styled from './styles';
 import { Author } from '../../shared-types/author';
 import { Category } from '../../shared-types/category';
 import { formatDate } from '../../utils/format-date';
+import Link from 'next/link';
 
 export type ArticleMetaProps = {
   createdAt: string;
@@ -20,9 +21,9 @@ export const ArticleMeta = ({
         {typeof author !== 'undefined' && (
           <>
             <span>Por: </span>
-            <a href={`/author/${author.data.attributes.slug}`}>
+            <Link href={`/author/${author.data.attributes.slug}`}>
               {author.data.attributes.displayName}
-            </a>
+            </Link>
           </>
         )}
         <span className="separator"> | </span>
@@ -32,9 +33,9 @@ export const ArticleMeta = ({
           <>
             <span className="separator"> | </span>
             <span className="categories">
-              <a href={`/category/${categories.data.attributes.slug}`}>
+              <Link href={`/category/${categories.data.attributes.slug}`}>
                 {categories.data.attributes.displayName}
-              </a>
+              </Link>
             </span>
           </>
         )}
