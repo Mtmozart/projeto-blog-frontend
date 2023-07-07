@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@styled-icons/material-outlined": "^10.47.0",
+    "graphql": "^16.7.1",
+    "graphql-request": "^6.1.0",
     "next": "latest",
     "Prettier": "npm:prettier@^2.8.8",
     "prop-types": "^15.8.1",
