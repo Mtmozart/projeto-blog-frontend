@@ -1,6 +1,7 @@
 import { data } from '../api/data.json';
 
 //recebimeto de dados do strapi
+
 const postsJson = data.posts.data;
 const postsQtd = postsJson.length;
 const postsApi: any[] = [];
