@@ -4,31 +4,30 @@ import { GRAPHQL_FRAGMENTS } from './fragments';
 export const GRAPHQL_QUERY = gql`
   ${GRAPHQL_FRAGMENTS}
   query GET_POSTS(
+    $start: Int = 0
+    $limit: Int = 10
     $categorySlug: String
     $postSlug: String
     $postSearch: String
     $authorSlug: String
     $tagSlug: String
-    $sort: String = "createdAt:desc"
-    $start: Int = 0
-    $limit: Int = 10
+    $sort: [String] = "createdAt:desc"
   ) {
     setting {
-      ...settings
+      ...settingEntityResponse
     }
     posts(
-      start: $start
-      limit: $limit
       sort: $sort
-      where: {
-        slug: $postSlug
-        title_contains: $postSearch
-        categories: { slug: $categorySlug }
-        author: { slug: $authorSlug }
-        tags: { slug: $tagSlug }
+      pagination: { start: $start, limit: $limit }
+      filters: {
+        slug: { eq: $postSlug }
+        title: { eq: $postSearch }
+        category: { slug: { eq: $categorySlug } }
+        author: { slug: { eq: $authorSlug } }
+        tags: { slug: { eq: $tagSlug } }
       }
     ) {
-      ...post
+      ...postEntityCollection
     }
   }
 `;

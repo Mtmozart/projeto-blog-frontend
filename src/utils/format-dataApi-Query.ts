@@ -1,9 +1,9 @@
 //recebimeto de dados do strapi
-import { data } from '../api/data.json';
+import data from '../api/data.json';
 
 const dataApiQ = data;
 
-export async function dataApi(): Promise<any[]> {
+export async function dataApi(data): Promise<any[]> {
   const postsJson = data.posts.data;
   const postsQtd = postsJson.length;
   const postsApi: any[] = [];

@@ -35,9 +35,10 @@ export const loadPosts = async (
     ...variables,
   });
 
-  dataApi(data).then((posts) => {
-    console.log(posts);
-  });
+  const posts = await dataApi(data);
 
-  return data;
+  return {
+    setting: data,
+    posts: posts,
+  };
 };
