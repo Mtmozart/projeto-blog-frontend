@@ -19,6 +19,7 @@ export async function dataApi(data): Promise<any[]> {
       allowComments,
       author,
       category,
+      createdAt,
     } = postsJson[i].attributes;
     const tags = postsJson[i].attributes.tags.data;
 
@@ -33,6 +34,7 @@ export async function dataApi(data): Promise<any[]> {
       tags,
       author,
       category,
+      createdAt,
     };
 
     postsApi.push(post);
