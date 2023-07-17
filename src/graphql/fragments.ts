@@ -113,6 +113,7 @@ export const GRAPHQL_FRAGMENTS = gql`
     }
     excerpt
     allowComments
+    content
     tags {
       ...tagEntityCollection
     }

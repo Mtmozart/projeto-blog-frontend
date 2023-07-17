@@ -1,19 +1,44 @@
-import { useEffect, useRef } from 'react';
-import { loadPosts } from '../api/load-posts';
+import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import { loadPosts, StrapiPostAndSettings } from '../api/load-posts';
+import { PostsTemplate } from '../templates/PostsTemplate';
 
-export default function Index() {
-  const oneUseEffect = useRef(true);
-  useEffect(() => {
-    if (oneUseEffect.current) {
-      oneUseEffect.current = false;
-
-      loadPosts({
-        authorSlug: 'matheus-mozart',
-      }).then((r) => {
-        console.log(r.setting, r.posts);
-      });
-    }
-  }, []);
-
-  return <h1>OI</h1>;
+export default function Index({ posts, setting }: StrapiPostAndSettings) {
+  return (
+    <>
+      <Head>
+        <title>{setting.data.attributes.BlogName}</title>
+        <meta
+          name="description"
+          content={setting.data.attributes.blogDescription}
+        />
+      </Head>
+      <PostsTemplate posts={posts} settings={setting} />
+    </>
+  );
 }
+
+export const getStaticProps: GetStaticProps<
+  StrapiPostAndSettings
+> = async () => {
+  let data = await loadPosts();
+
+  try {
+    data = await loadPosts();
+  } catch (e) {
+    data = null;
+  }
+
+  if (!data || !data.posts || !data.posts.length) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      posts: data.posts,
+      setting: data.setting,
+    },
+  };
+};

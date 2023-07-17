@@ -1,5 +1,5 @@
 import { request } from 'graphql-request';
-import { Settings } from 'node:http2';
+import { SettingsStrapi } from '../shared-types/settings-strapi';
 import config from '../config';
 import { GRAPHQL_QUERY } from '../graphql/queries';
 import { PostStrapi } from '../shared-types/post-strapi';
@@ -12,12 +12,14 @@ export type LoadPostsVariables = {
   authorSlug?: string;
   tagSlug?: string;
   sort?: string;
-  start?: number;
-  limit?: number;
+  pagination?: {
+    start?: number;
+    limit?: number;
+  };
 };
 
 export type StrapiPostAndSettings = {
-  setting: Settings;
+  setting: SettingsStrapi;
   posts: PostStrapi[];
 };
 
@@ -26,19 +28,24 @@ export const loadPosts = async (
 ): Promise<StrapiPostAndSettings> => {
   const defaultVariables: LoadPostsVariables = {
     sort: 'createdAt:desc',
-    start: 0,
-    limit: 10,
+    pagination: {
+      start: 0,
+      limit: 10,
+    },
   };
 
-  const data = await request(config.graphqlURL, GRAPHQL_QUERY, {
+  const dataStrapi = await request(config.graphqlURL, GRAPHQL_QUERY, {
     ...defaultVariables,
     ...variables,
   });
 
-  const posts = await dataApi(data);
+  const posts = await dataApi(dataStrapi);
+  const { setting } = dataStrapi as { setting: SettingsStrapi };
 
-  return {
-    setting: data,
-    posts: posts,
+  const data = {
+    setting,
+    posts,
   };
+
+  return data;
 };
