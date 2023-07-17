@@ -21,7 +21,7 @@ export default function Index({ posts, setting }: StrapiPostAndSettings) {
 export const getStaticProps: GetStaticProps<
   StrapiPostAndSettings
 > = async () => {
-  let data = await loadPosts();
+  let data = null;
 
   try {
     data = await loadPosts();
@@ -40,5 +40,6 @@ export const getStaticProps: GetStaticProps<
       posts: data.posts,
       setting: data.setting,
     },
+    revalidate: 24 * 60 * 60,
   };
 };

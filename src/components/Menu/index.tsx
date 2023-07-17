@@ -12,9 +12,7 @@ export type MenuPropsLinks = {
   newTab?: boolean;
   text: string;
 };
-/*Aqui há um erro, eu coloque na api como menu link,
-provavelmente vou ter que ajeitar mais tarde, escrevendo para
-lembrar,mas é melhor seguir o curso --- menuLink é o nome da fera*/
+
 export type MenuProps = {
   links: MenuPropsLinks[];
   blogName: string;
