@@ -93,7 +93,7 @@
                 }
               }
             },
-            "categories": {
+            "category": {
               "data": {
                 "id": "2",
                 "attributes": {

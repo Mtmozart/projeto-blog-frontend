@@ -1,9 +1,17 @@
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
+import {
+  defaultLoadPostsVariables,
+  loadPosts,
+  StrapiPostAndSettings,
+} from '../../api/load-posts';
 import { useRouter } from 'next/router';
 import { PostsTemplate } from '../../templates/PostsTemplate';
-export default function AuthorPage({ posts, setting }: StrapiPostAndSettings) {
+export default function AuthorPage({
+  posts,
+  setting,
+  variables,
+}: StrapiPostAndSettings) {
   const router = useRouter();
   if (router.isFallback) {
     return <h1>Loading...</h1>;
@@ -21,7 +29,7 @@ export default function AuthorPage({ posts, setting }: StrapiPostAndSettings) {
           content={setting.data.attributes.blogDescription}
         />
       </Head>
-      <PostsTemplate posts={posts} settings={setting} />
+      <PostsTemplate posts={posts} settings={setting} variables={variables} />
     </>
   );
 }
@@ -68,6 +76,9 @@ export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (
     props: {
       posts: data.posts,
       setting: data.setting,
+      variables: {
+        ...defaultLoadPostsVariables,
+      },
     },
     revalidate: 24 * 60 * 60,
   };

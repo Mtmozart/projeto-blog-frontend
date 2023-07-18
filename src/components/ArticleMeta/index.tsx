@@ -7,18 +7,18 @@ import Link from 'next/link';
 export type ArticleMetaProps = {
   createdAt: string;
   author?: Author;
-  categories?: Category;
+  category?: Category;
 };
 
 export const ArticleMeta = ({
   createdAt,
   author = undefined,
-  categories = undefined,
+  category = undefined,
 }: ArticleMetaProps) => {
   return (
     <Styled.Wrapper>
       <p>
-        {typeof author !== 'undefined' && (
+        {author && typeof author !== 'undefined' && (
           <>
             <span>Por: </span>
             <Link href={`/author/${author.data.attributes.slug}`}>
@@ -29,12 +29,12 @@ export const ArticleMeta = ({
         <span className="separator"> | </span>
         <time dateTime={createdAt}>{formatDate(createdAt)}</time>
 
-        {typeof categories !== 'undefined' && (
+        {category && typeof category !== 'undefined' && (
           <>
             <span className="separator"> | </span>
             <span className="categories">
-              <Link href={`/category/${categories.data.attributes.slug}`}>
-                {categories.data.attributes.displayName}
+              <Link href={`/category/${category.data.attributes.slug}`}>
+                {category.data.attributes.displayName}
               </Link>
             </span>
           </>

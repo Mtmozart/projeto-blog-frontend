@@ -4,6 +4,8 @@ import * as Styled from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { GoToTop } from '../../components/GoToTop';
+import { Style } from '@styled-icons/material-outlined';
+import { useRouter } from 'next/router';
 
 export type BaseTemplateProps = {
   settings: SettingsStrapi;
@@ -11,6 +13,7 @@ export type BaseTemplateProps = {
 };
 
 export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
+  const router = useRouter();
   return (
     <Styled.Wrapper>
       <Menu
@@ -27,7 +30,16 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
           showText={true}
         />
       </Styled.HeaderContainer>
-
+      <Styled.SearchContainer>
+        <form action="/search" method="GET">
+          <Styled.SearchInput
+            type="search"
+            placeholder="Buscar posts"
+            name="q"
+            defaultValue={router.query.q}
+          />
+        </form>
+      </Styled.SearchContainer>
       <Styled.ContentContainer>{children}</Styled.ContentContainer>
 
       <Styled.FooterContainer>

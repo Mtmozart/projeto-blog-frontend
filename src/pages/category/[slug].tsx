@@ -1,11 +1,16 @@
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { loadPosts, StrapiPostAndSettings } from '../../api/load-posts';
+import {
+  defaultLoadPostsVariables,
+  loadPosts,
+  StrapiPostAndSettings,
+} from '../../api/load-posts';
 import { useRouter } from 'next/router';
 import { PostsTemplate } from '../../templates/PostsTemplate';
 export default function CategoryPage({
   posts,
   setting,
+  variables,
 }: StrapiPostAndSettings) {
   const router = useRouter();
   if (router.isFallback) {
@@ -25,7 +30,7 @@ export default function CategoryPage({
           content={setting.data.attributes.blogDescription}
         />
       </Head>
-      <PostsTemplate posts={posts} settings={setting} />
+      <PostsTemplate posts={posts} settings={setting} variables={variables} />
     </>
   );
 }
@@ -55,9 +60,9 @@ export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (
   ctx,
 ) => {
   let data = null;
-
+  const variables = { categorySlug: ctx.params.slug as string };
   try {
-    data = await loadPosts({ categorySlug: ctx.params.slug as string });
+    data = await loadPosts(variables);
   } catch (e) {
     data = null;
   }
@@ -72,6 +77,10 @@ export const getStaticProps: GetStaticProps<StrapiPostAndSettings> = async (
     props: {
       posts: data.posts,
       setting: data.setting,
+      variables: {
+        ...defaultLoadPostsVariables,
+        ...variables,
+      },
     },
     revalidate: 24 * 60 * 60,
   };

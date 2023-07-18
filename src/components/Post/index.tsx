@@ -10,7 +10,7 @@ export type PostProps = ArticleHeaderProps & {
 export const Post = ({
   title,
   author,
-  categories,
+  category,
   content,
   cover,
   createdAt,
@@ -23,7 +23,7 @@ export const Post = ({
       <ArticleHeader
         title={title}
         author={author}
-        categories={categories}
+        category={category}
         excerpt={excerpt}
         id={id}
         cover={cover}

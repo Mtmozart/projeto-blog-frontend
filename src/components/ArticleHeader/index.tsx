@@ -11,7 +11,7 @@ export type ArticleHeaderProps = {
   excerpt: string;
   cover: StrapiImage;
   author: Author;
-  categories: Category;
+  category: Category;
   createdAt: string;
 };
 
@@ -21,7 +21,7 @@ export const ArticleHeader = ({
   excerpt,
   cover,
   author,
-  categories,
+  category,
   createdAt,
 }: ArticleHeaderProps) => {
   return (
@@ -32,11 +32,7 @@ export const ArticleHeader = ({
         src={`http://localhost:1337${cover.data.attributes.url}`}
         alt={title}
       />
-      <ArticleMeta
-        categories={categories}
-        author={author}
-        createdAt={createdAt}
-      />
+      <ArticleMeta category={category} author={author} createdAt={createdAt} />
     </Styled.Wrapper>
   );
 };
