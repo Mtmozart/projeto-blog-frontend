@@ -6,6 +6,7 @@ import { Footer } from '../../components/Footer';
 import { GoToTop } from '../../components/GoToTop';
 import { Style } from '@styled-icons/material-outlined';
 import { useRouter } from 'next/router';
+import { ToggleTheme } from '../../components/ToogleTheme';
 
 export type BaseTemplateProps = {
   settings: SettingsStrapi;
@@ -16,6 +17,7 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
   const router = useRouter();
   return (
     <Styled.Wrapper>
+      <ToggleTheme />
       <Menu
         links={settings.data.attributes.menuLink}
         blogName={settings.data.attributes.BlogName}
