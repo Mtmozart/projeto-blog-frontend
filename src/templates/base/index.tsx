@@ -4,7 +4,6 @@ import * as Styled from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { GoToTop } from '../../components/GoToTop';
-import { Style } from '@styled-icons/material-outlined';
 import { useRouter } from 'next/router';
 import { ToggleTheme } from '../../components/ToogleTheme';
 
