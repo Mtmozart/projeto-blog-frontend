@@ -4,6 +4,7 @@ import { StrapiImage } from '../../shared-types/strapi-image';
 import { ArticleMeta } from '../ArticleMeta';
 import { Heading } from '../Heading';
 import * as Styled from './styles';
+import config from '../../config';
 
 export type ArticleHeaderProps = {
   id: string;
@@ -14,6 +15,7 @@ export type ArticleHeaderProps = {
   category: Category;
   createdAt: string;
 };
+const url = config.url;
 
 export const ArticleHeader = ({
   id,
@@ -28,10 +30,7 @@ export const ArticleHeader = ({
     <Styled.Wrapper>
       <Heading size="big">{title}</Heading>
       <Styled.Excerpt>{excerpt}</Styled.Excerpt>
-      <Styled.Cover
-        src={`http://localhost:1337${cover.data.attributes.url}`}
-        alt={title}
-      />
+      <Styled.Cover src={`${url}${cover.data.attributes.url}`} alt={title} />
       <ArticleMeta category={category} author={author} createdAt={createdAt} />
     </Styled.Wrapper>
   );

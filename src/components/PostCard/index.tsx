@@ -2,6 +2,7 @@ import Link from 'next/link';
 import * as Styled from './styles';
 import { Heading } from '../Heading';
 import { StrapiImage } from '../../shared-types/strapi-image';
+import config from '../../config';
 
 export type PostCardProps = {
   id: string;
@@ -10,13 +11,13 @@ export type PostCardProps = {
   excerpt: string;
   slug: string;
 };
-
+const url = config.url;
 export function PostCard({ title, excerpt, cover, slug }: PostCardProps) {
   return (
     <Styled.Wrapper>
       <Link href={`/post/${slug}`}>
         <Styled.Cover
-          src={`http://localhost:1337${cover.data.attributes.url}`}
+          src={`${url}${cover.data.attributes.url}`}
           alt={title}
         ></Styled.Cover>
       </Link>
