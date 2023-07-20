@@ -22,7 +22,6 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
         blogName={settings.data.attributes.BlogName}
         logo={settings.data.attributes.logo}
       />
-
       <Styled.HeaderContainer>
         <Header
           blogName={settings.data.attributes.BlogName}
