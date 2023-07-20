@@ -16,7 +16,7 @@ export function PostCard({ title, excerpt, cover, slug }: PostCardProps) {
     <Styled.Wrapper>
       <Link href={`/post/${slug}`}>
         <Styled.Cover
-          src={`${cover.data.attributes.url}`}
+          src={cover.data.attributes.url}
           alt={title}
         ></Styled.Cover>
       </Link>
