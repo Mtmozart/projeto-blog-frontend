@@ -11,7 +11,7 @@ const {
   cover,
   allowComments,
   author,
-  categories,
+  category,
 } = postsApi[0];
 
 export default {
@@ -23,6 +23,6 @@ export default {
   cover,
   allowComments,
   author,
-  categories,
+  category,
   createdAt: '2023-06-02T15:16:09.246+00:00',
 } as PostProps;
