@@ -10,7 +10,7 @@ export type FooterProps = {
 export const Footer = ({ footerHtml }: FooterProps) => {
   const themeContext = useContext(BlogThemeContext);
   return (
-    <Styled.Container onClick={() => themeContext.setTheme('inverted')}>
+    <Styled.Container>
       <HtmlContent html={footerHtml} />
     </Styled.Container>
   );

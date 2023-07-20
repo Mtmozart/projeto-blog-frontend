@@ -69,6 +69,28 @@ exports[`<Header /> should match snapshot 1`] = `
   border-radius: 50%;
 }
 
+@media (max-width:360px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+  }
+
+  .c0 > .c1 {
+    margin: 0 0 2.4rem 0;
+  }
+}
+
+@media (max-width:360px) {
+  .c4 {
+    margin-left: 0;
+  }
+}
+
 <div>
   <header
     class="c0"
@@ -77,17 +99,14 @@ exports[`<Header /> should match snapshot 1`] = `
       class="c1 c2"
     >
       <a
+        class="c3"
         href="/"
+        target="_self"
       >
-        <a
-          class="c3"
-          target="_self"
-        >
-          <img
-            alt="Fallen Calvo - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
-            src="/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg"
-          />
-        </a>
+        <img
+          alt="Fallen Calvo"
+          src="/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg"
+        />
       </a>
     </h1>
     <div

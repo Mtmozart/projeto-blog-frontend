@@ -8,6 +8,7 @@ module.exports = {
     '!<rootDir>/src/templates/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/contexts/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/graphql/**/*.{js,jsx,ts,tsx}',
+    '!<rootDir>/src/utils/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/components/Comments/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/shared-types/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/src/shared-typed/**/*.{js,jsx,ts,tsx}',

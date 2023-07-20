@@ -51,20 +51,6 @@ exports[`<ArticleMeta /> should match snapshot 1`] = `
       >
         2 de jun. de 2023
       </time>
-      <span
-        class="separator"
-      >
-         | 
-      </span>
-      <span
-        class="categories"
-      >
-        <a
-          href="/category/react6"
-        >
-          React6
-        </a>
-      </span>
     </p>
   </div>
 </div>

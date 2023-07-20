@@ -155,17 +155,14 @@ exports[`<Menu/> should match snapshot 1`] = `
           class="c5 c6"
         >
           <a
+            class="c7"
             href="/"
+            target="_self"
           >
-            <a
-              class="c7"
-              target="_self"
-            >
-              <img
-                alt="Matheus Mozart"
-                src="/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg"
-              />
-            </a>
+            <img
+              alt="Matheus Mozart"
+              src="/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg"
+            />
           </a>
         </h1>
       </div>
