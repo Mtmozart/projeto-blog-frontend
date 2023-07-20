@@ -33,7 +33,7 @@ export const NoAuthor: StoryFn<ArticleMetaProps> = (args) => {
 export const NoCategories: StoryFn<ArticleMetaProps> = (args) => {
   return (
     <div>
-      <ArticleMeta {...args} categories={undefined} />
+      <ArticleMeta {...args} category={undefined} />
     </div>
   );
 };
@@ -41,7 +41,7 @@ export const NoCategories: StoryFn<ArticleMetaProps> = (args) => {
 export const NoAuthorAndCategories: StoryFn<ArticleMetaProps> = (args) => {
   return (
     <div>
-      <ArticleMeta {...args} categories={undefined} author={undefined} />
+      <ArticleMeta {...args} category={undefined} author={undefined} />
     </div>
   );
 };
