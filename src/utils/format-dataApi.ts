@@ -1,10 +1,24 @@
 import { data } from '../api/data.json';
+import { Author } from '../shared-types/author';
+import { Category } from '../shared-types/category';
+import { StrapiImage } from '../shared-types/strapi-image';
+import { PostTag } from '../shared-types/tag';
 
-//recebimeto de dados do strapi
-
+interface Post {
+  id: string;
+  title: string;
+  slug: string;
+  content: string;
+  cover: StrapiImage;
+  excerpt: string;
+  allowComments: boolean;
+  tags: PostTag[];
+  author: Author;
+  category: Category;
+}
 const postsJson = data.posts.data;
 const postsQtd = postsJson.length;
-const postsApi: any[] = [];
+const postsApi: Post[] = [];
 
 for (let i = 0; i < postsQtd; i++) {
   const { id } = postsJson[i];
@@ -16,11 +30,11 @@ for (let i = 0; i < postsQtd; i++) {
     cover,
     allowComments,
     author,
-    categories,
+    category,
   } = postsJson[i].attributes;
   const tags = postsJson[i].attributes.tags.data;
 
-  const post = {
+  const post: Post = {
     id,
     title,
     slug,
@@ -30,7 +44,7 @@ for (let i = 0; i < postsQtd; i++) {
     allowComments,
     tags,
     author,
-    categories,
+    category,
   };
 
   postsApi.push(post);
