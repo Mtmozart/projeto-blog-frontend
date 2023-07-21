@@ -1,13 +1,13 @@
-import { SettingsStrapi } from '../../shared-types/settings-strapi';
-import { Menu } from '../../components/Menu';
-import * as Styled from './styles';
-import { Header } from '../../components/Header';
+import { useRouter } from 'next/router';
+import React, { useEffect, useRef, useState } from 'react';
 import { Footer } from '../../components/Footer';
 import { GoToTop } from '../../components/GoToTop';
-import { useRouter } from 'next/router';
+import { Header } from '../../components/Header';
+import { Menu } from '../../components/Menu';
 import { ToggleTheme } from '../../components/ToogleTheme';
-import { useState, useRef, useEffect } from 'react';
-/*Icons */
+import { SettingsStrapi } from '../../shared-types/settings-strapi';
+import * as Styled from './styles';
+
 import { Cancel } from '@styled-icons/material-outlined/Cancel';
 import { CheckCircleOutline } from '@styled-icons/material-outlined/CheckCircleOutline';
 
@@ -37,6 +37,7 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
     if (router?.query?.q === searchValue) {
       return;
     }
+
     const q = searchValue;
 
     if (!q || q.length < 3) {
@@ -52,19 +53,20 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
         })
         .then(() => setIsReady(true));
     }, 600);
-    return () => {
-      clearTimeout(inputTimeout.current);
-    };
+
+    return () => clearTimeout(inputTimeout.current);
   }, [searchValue, router]);
 
   return (
     <Styled.Wrapper>
       <ToggleTheme />
+
       <Menu
         links={settings.data.attributes.menuLink}
         blogName={settings.data.attributes.BlogName}
         logo={settings.data.attributes.logo}
       />
+
       <Styled.HeaderContainer>
         <Header
           blogName={settings.data.attributes.BlogName}
@@ -73,14 +75,15 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
           showText={true}
         />
       </Styled.HeaderContainer>
+
       <Styled.SearchContainer>
         <Styled.SearchInput
           type="search"
-          placeholder="Buscar posts"
+          placeholder="Encontre posts"
           name="q"
           value={searchValue}
-          disabled={searchDisabled}
           onChange={(e) => setSearchValue(e.target.value)}
+          disabled={searchDisabled}
         />
         {searchDisabled ? (
           <Cancel className="search-cancel-icon" aria-label="Input Disabled" />
@@ -91,11 +94,13 @@ export const BaseTemplate = ({ settings, children }: BaseTemplateProps) => {
           />
         )}
       </Styled.SearchContainer>
+
       <Styled.ContentContainer>{children}</Styled.ContentContainer>
 
       <Styled.FooterContainer>
         <Footer footerHtml={settings.data.attributes.text} />
       </Styled.FooterContainer>
+
       <GoToTop />
     </Styled.Wrapper>
   );
