@@ -15,13 +15,15 @@ export const PostTemplate = ({ settings, post }: PostTemplateProps) => {
   return (
     <BaseTemplate settings={settings}>
       <Post {...post} />
+
       <Styled.TagsContainer>
         <PostTags tags={post.tags} />
       </Styled.TagsContainer>
+
       <Comments
         title={post.title}
-        id={post.id}
         slug={post.slug}
+        id={post.id}
         allowComments={post.allowComments}
       />
     </BaseTemplate>
