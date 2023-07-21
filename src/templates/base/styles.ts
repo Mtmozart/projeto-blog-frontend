@@ -1,13 +1,22 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
-    /* Insira seu código CSS aqui */
-  `}
+  svg.search-ok-icon,
+  svg.search-cancel-icon {
+    width: 2.4rem;
+    margin-left: 1rem;
+    height: 2.4rem;
+  }
+  svg.search-cancel-icon {
+    ${({ theme }) => css`
+      color: ${theme.colorsThemes.secondary};
+    `}
+  }
 `;
 export const HeaderContainer = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xhuge};
+    padding: 0 ${theme.spacings.large};
   `}
 `;
 
@@ -26,6 +35,10 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   ${({ theme }) => css`
     padding: 0.5rem ${theme.spacings.small};
+
+    &:disabled {
+      outline: 0.1rem solid ${theme.colorsThemes.secondary};
+    }
   `}
 `;
 export const ContentContainer = styled.div`

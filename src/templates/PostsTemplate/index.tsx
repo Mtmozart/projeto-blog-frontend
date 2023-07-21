@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as Styled from './styles';
 import { PostStrapi } from '../../shared-types/post-strapi';
 import { BaseTemplate } from '../Base';
@@ -21,6 +21,13 @@ export const PostsTemplate = ({
   const [stateVariables, setStateVariables] = useState(variables);
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [noMorePosts, setNoMorePosts] = useState(false);
+
+  useEffect(() => {
+    setStatePots(posts);
+    setNoMorePosts(false);
+    setButtonDisabled(false);
+    setStateVariables(variables);
+  }, [posts, variables]);
 
   const handleLoadMoresPosts = async () => {
     setButtonDisabled(true);
