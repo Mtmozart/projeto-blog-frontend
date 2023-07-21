@@ -8,33 +8,31 @@ describe('<Header />', () => {
   it('should render an image, a heading and text', () => {
     renderTheme(<Header {...props} showText={undefined} />);
 
-    expect(
-      screen.getByRole('heading', { name: props.blogName }),
-    ).toBeInTheDocument();
-    expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
+    expect(screen.getByRole('img', { name: /Falle calvo/i })).toHaveAttribute(
       'src',
+      props.logo,
     );
     expect(screen.getByText(props.blogDescription)).toBeInTheDocument();
   });
 
-  it('should render image only', () => {
-    renderTheme(<Header {...props} showText={false} />);
+  expect(screen.getByText(props.blogDescription)).toBeInTheDocument();
+});
 
-    expect(
-      screen.queryByRole('heading', { name: 'Fallen Calvo' }),
-    ).not.toBeInTheDocument();
-    expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
-      'src',
-    );
+it('should render image only', () => {
+  renderTheme(<Header {...props} showText={false} />);
 
-    expect(screen.queryByRole(props.blogDescription)).not.toBeInTheDocument();
-  });
+  expect(
+    screen.queryByRole('heading', { name: 'Fallen Calvo' }),
+  ).not.toBeInTheDocument();
+  expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
+    'src',
+  );
 
-  it('should match snapshot', () => {
-    const { container } = renderTheme(
-      <Header {...props} showText={undefined} />,
-    );
+  expect(screen.queryByRole(props.blogDescription)).not.toBeInTheDocument();
+});
 
-    expect(container).toMatchSnapshot();
-  });
+it('should match snapshot', () => {
+  const { container } = renderTheme(<Header {...props} showText={undefined} />);
+
+  expect(container).toMatchSnapshot();
 });

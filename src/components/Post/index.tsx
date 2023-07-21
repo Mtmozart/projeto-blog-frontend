@@ -19,17 +19,20 @@ export const Post = ({
 }: PostProps) => {
   return (
     <Styled.Wrapper>
-      <PostContainer size="max" />
-      <ArticleHeader
-        title={title}
-        author={author}
-        category={category}
-        excerpt={excerpt}
-        id={id}
-        cover={cover}
-        createdAt={createdAt}
-      />
-      <HtmlContent html={content} />
+      <PostContainer size="max">
+        <ArticleHeader
+          title={title}
+          author={author}
+          category={category}
+          excerpt={excerpt}
+          id={id}
+          cover={cover}
+          createdAt={createdAt}
+        />
+      </PostContainer>
+      <PostContainer size="content">
+        <HtmlContent html={content} />
+      </PostContainer>
     </Styled.Wrapper>
   );
 };
