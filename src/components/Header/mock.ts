@@ -10,7 +10,7 @@ export default {
       attributes: {
         name: '3334910-desktop-source-code-and-wallpaper-by-coding-and-programming-gratis-foto.jpg',
         altText: null,
-        url: '/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg',
+        url: 'https://pbs.twimg.com/media/FqKWLbAWwAAM7KA?format=jpg&name=small',
       },
     },
   },

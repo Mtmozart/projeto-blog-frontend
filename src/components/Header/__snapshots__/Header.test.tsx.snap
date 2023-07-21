@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match snapshot 1`] = `
+exports[`<Header /> should match snapshot 1`] = `
 .c2 {
   color: #000000;
   font-size: 2.4rem;
@@ -105,7 +105,7 @@ exports[`should match snapshot 1`] = `
       >
         <img
           alt="Fallen Calvo"
-          src="/uploads/3334910_desktop_source_code_and_wallpaper_by_coding_and_programming_gratis_foto_984e6e9853.jpg"
+          src="https://pbs.twimg.com/media/FqKWLbAWwAAM7KA?format=jpg&name=small"
         />
       </a>
     </h1>

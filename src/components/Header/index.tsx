@@ -18,11 +18,7 @@ export const Header = ({
 }: HeaderProps) => {
   return (
     <Styled.Wrapper>
-      <LogoLink
-        link="/"
-        srcImg={logo.data.attributes.url}
-        text={`${blogName}`}
-      />
+      <LogoLink link="/" srcImg={logo.data.attributes.url} text={blogName} />
 
       {showText && (
         <Styled.Content>
