@@ -15,6 +15,7 @@ interface Post {
   tags: PostTag[];
   author: Author;
   category: Category;
+  createdAt: string;
 }
 const postsJson = data.posts.data;
 const postsQtd = postsJson.length;
@@ -31,6 +32,7 @@ for (let i = 0; i < postsQtd; i++) {
     allowComments,
     author,
     category,
+    createdAt,
   } = postsJson[i].attributes;
   const tags = postsJson[i].attributes.tags.data;
 
@@ -45,6 +47,7 @@ for (let i = 0; i < postsQtd; i++) {
     tags,
     author,
     category,
+    createdAt,
   };
 
   postsApi.push(post);
