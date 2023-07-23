@@ -2,11 +2,13 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-  iframe[src*='ads'] {
+    iframe[src*='ads'] {
       display: none;
     }
+
     font-size: calc(${theme.font.sizes.small} + 0.2rem);
     line-height: 1.5;
+
     p {
       margin: ${theme.spacings.medium} 0;
     }
@@ -22,7 +24,8 @@ export const Container = styled.div`
     a:hover {
       filter: brightness(50%);
     }
-    /*code {
+
+    /* code {
       font-family: monospace;
       color: ${theme.colorsThemes.secondary};
       font-size: ${theme.font.sizes.small};
@@ -36,37 +39,40 @@ export const Container = styled.div`
       padding: ${theme.spacings.medium};
       font-family: monospace;
       color: ${theme.colorsThemes.white};
+      margin: ${theme.spacings.medium} 0;
       width: 100%;
       overflow-x: auto;
       font-size: ${theme.font.sizes.small};
-      margin: ${theme.spacings.medium} 0;
     }
 
     pre code {
       color: inherit;
       background: inherit;
     } */
+
     img {
       max-width: 100%;
     }
 
     .image {
-      ${theme.colorsThemes.mediumGray}
+      background: ${theme.colorsThemes.mediumGray};
       line-height: 0;
       margin: ${theme.spacings.medium} 0;
     }
+
     .image figcaption {
-      font-size: ${theme.font.sizes.small}
-      padding: ${theme.spacings.small}
+      font-size: ${theme.font.sizes.small};
+      padding: ${theme.spacings.small};
       text-align: center;
-      ine-height: 1.3;
+      line-height: 1.3;
     }
 
     .image-style-side {
-      float: right;
       max-width: 50%;
+      float: right;
       margin: ${theme.spacings.medium} 0;
     }
+
     hr {
       border: none;
       border-bottom: 0.1rem solid ${theme.colorsThemes.mediumGray};
@@ -76,21 +82,25 @@ export const Container = styled.div`
     ol {
       margin: ${theme.spacings.medium} ${theme.spacings.xlarge};
     }
+
     .table {
       width: 100%;
       overflow: hidden;
       overflow-x: auto;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin: ${theme.spacings.medium} 0;
     }
+
     table td,
     table th {
       padding: ${theme.spacings.small};
       border: 0.1rem solid ${theme.colorsThemes.mediumGray};
     }
+
     blockquote {
       border-left: 0.5rem solid ${theme.colorsThemes.secondary};
       color: ${theme.colorsThemes.darkerGray};
@@ -100,15 +110,14 @@ export const Container = styled.div`
       margin: ${theme.spacings.medium};
     }
 
-      @media ${theme.media.lteMedium} {
+    @media ${theme.media.lteMedium} {
       font-size: 2rem;
 
       .image-style-side {
-        float: none;
         max-width: 100%;
-        margin: ${theme.spacings.medium}
+        float: none;
+        margin: 0;
       }
     }
-
   `}
 `;

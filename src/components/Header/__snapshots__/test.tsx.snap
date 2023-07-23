@@ -13,42 +13,6 @@ exports[`<Header /> should match snapshot 1`] = `
   text-transform: none;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-bottom: 6.4rem;
-  width: 100%;
-  max-width: 96rem color:#333333;
-  font-size: 1.6rem;
-  margin: 0 auto;
-}
-
-.c0 .c1 {
-  margin: 0 0 calc(1.6rem - 1rem);
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column wrap;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  margin-left: 3.2rem;
-  max-width: 48rem;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -67,6 +31,43 @@ exports[`<Header /> should match snapshot 1`] = `
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 6.4rem;
+  width: 100%;
+  max-width: 96rem;
+  color: #333333;
+  font-size: 1.6rem;
+  margin: 0 auto;
+}
+
+.c0 .c1 {
+  margin: 0 0 calc(1.6rem - 1rem);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  margin-left: 3.2rem;
+  max-width: 48rem;
 }
 
 @media (max-width:360px) {
@@ -104,7 +105,7 @@ exports[`<Header /> should match snapshot 1`] = `
         target="_self"
       >
         <img
-          alt="Fallen Calvo"
+          alt="Fallen Calvo - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
           src="https://pbs.twimg.com/media/FqKWLbAWwAAM7KA?format=jpg&name=small"
         />
       </a>

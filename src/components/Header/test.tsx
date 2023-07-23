@@ -9,7 +9,7 @@ describe('<Header />', () => {
     renderTheme(<Header {...props} showText={undefined} />);
 
     expect(
-      screen.getByRole('heading', { name: /Fallen Calvo/i }),
+      screen.getByRole('heading', { name: props.blogName }),
     ).toBeInTheDocument();
     expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
       'src',
@@ -22,13 +22,13 @@ describe('<Header />', () => {
     renderTheme(<Header {...props} showText={false} />);
 
     expect(
-      screen.queryByRole('heading', { name: props.blogName }),
+      screen.queryByRole('heading', { name: 'Fallen Calvo' }),
     ).not.toBeInTheDocument();
     expect(screen.getByRole('img', { name: /Fallen Calvo/i })).toHaveAttribute(
       'src',
       props.logo.data.attributes.url,
     );
-    expect(screen.getAllByRole(props.blogDescription)).not.toBeInTheDocument();
+    expect(screen.queryByRole(props.blogDescription)).not.toBeInTheDocument();
   });
 
   it('should match snapshot', () => {

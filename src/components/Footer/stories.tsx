@@ -5,7 +5,7 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    footerHtml: `<p><a href="#">Matheus Mozart, sempre fazendo as coisas com carinho!❤</a></p>`,
+    footerHtml: `<p><a href="https://beacons.page/otaviomiranda">Foi Feito com ❤ por Otávio Miranda</a></p>`,
   },
 } as Meta<typeof Footer>;
 

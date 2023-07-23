@@ -8,16 +8,19 @@ export const Wrapper = styled.header`
     justify-content: center;
     padding-bottom: ${theme.spacings.xhuge};
     width: 100%;
-    max-width: ${theme.sizes.max}
+    max-width: ${theme.sizes.max};
     color: ${theme.colorsThemes.darkText};
     font-size: ${theme.font.sizes.small};
     margin: 0 auto;
+
     ${HeadingStyles} {
       margin: 0 0 calc(${theme.spacings.small} - 1rem);
     }
- @media ${theme.media.lteSmall} {
+
+    @media ${theme.media.lteSmall} {
       display: flex;
       flex-flow: column wrap;
+
       & > ${HeadingStyles} {
         margin: 0 0 ${theme.spacings.medium} 0;
       }
@@ -31,6 +34,7 @@ export const Content = styled.div`
     flex-flow: column wrap;
     margin-left: ${theme.spacings.large};
     max-width: 48rem;
+
     @media ${theme.media.lteSmall} {
       margin-left: 0;
     }

@@ -1,13 +1,13 @@
-import * as Styled from './styles';
+import { StrapiImage } from '../../shared-types/strapi-image';
 import { Heading } from '../Heading';
 import { LogoLink } from '../LogoLink';
-import { StrapiImage } from '../../shared-types/strapi-image';
+import * as Styled from './styles';
 
 export type HeaderProps = {
   blogName: string;
   blogDescription: string;
   logo: StrapiImage;
-  showText: boolean;
+  showText?: boolean;
 };
 
 export const Header = ({
@@ -18,7 +18,11 @@ export const Header = ({
 }: HeaderProps) => {
   return (
     <Styled.Wrapper>
-      <LogoLink link="/" srcImg={logo.data.attributes.url} text={blogName} />
+      <LogoLink
+        link="/"
+        srcImg={logo.data.attributes.url}
+        text={`${blogName} - ${blogDescription}`}
+      />
 
       {showText && (
         <Styled.Content>

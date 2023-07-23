@@ -16,22 +16,3 @@ export default {
   },
   showText: true,
 } as HeaderProps;
-
-/*export default {
-"data": {
-  "id": "1",
-  "attributes": {
-    "BlogName": "Alameda do dev",
-    "blogDescription": "O blog é dedicado a compartilhar conhecimentos e experiências de desenvolvedores em diversas áreas, oferecendo insights valiosos e dicas práticas para o aprimoramento das habilidades de programação. Aborda tópicos como linguagens de programação, frameworks, boas práticas de codificação, desenvolvimento web, mobile, inteligência artificial e muito mais. É uma fonte indispensável de informações atualizadas para desenvolvedores em busca de crescimento profissional e aprendizado contínuo.",
-    "logo": {
-      "data": {
-        "identificador": "3",
-        "attributes": {
-          "name": "3334910-desktop-source-code-and-wallpaper-by-coding-and-programming-gratis-foto.jpg",
-          "altText": null,
-          "url": "/assets/image/planet.jpg"
-        }
-      }
-     }
-    }
-    } as HeaderProps*/

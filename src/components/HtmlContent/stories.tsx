@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { HtmlContent, HtmlContentProps } from '.';
 import mock from './mock';
-import { Markdown } from '@storybook/blocks';
+
 export default {
   title: 'HtmlContent',
   component: HtmlContent,
